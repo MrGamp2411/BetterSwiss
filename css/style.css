@@ -1,10 +1,16 @@
 /* Aggiorna il tuo CSS in style.css */
 
+@keyframes flameAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(180deg, rgba(83, 73, 242, 1) 13%, rgba(177, 73, 252, 1) 31%, rgba(0, 0, 0, 1) 71%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 27%, rgba(171, 21, 205, 1) 84%, rgba(0, 97, 255, 1) 100%);
     color: #fff;
     transition: background 0.5s ease;
     position: relative;
@@ -12,10 +18,10 @@ body {
 }
 
 header {
-    background-color: rgba(83, 73, 242, 1);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
     padding: 15px;
     text-align: center;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 5px rgba(171, 21, 205, 0.5); /* Cambiato il colore dell'ombra a viola */
     position: relative;
     display: flex;
     align-items: center;
@@ -33,10 +39,18 @@ header {
     align-items: center;
     justify-content: center;
     order: 1;
+    position: relative;
+    overflow: hidden;
 }
 
 .logo-container h1 {
     margin: 0;
+    background: linear-gradient(90deg, #000, #bd04bd, #0071ff);
+    background-size: 300% 300%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: flameAnimation 5s infinite;
 }
 
 nav {
@@ -47,7 +61,7 @@ nav {
     top: 100%;
     right: 0;
     background-color: rgba(0, 0, 0, 1);
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 5px rgba(171, 21, 205, 0.5); /* Cambiato il colore dell'ombra a viola */
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
@@ -89,7 +103,7 @@ nav.open {
         top: 60px;
         right: 0;
         background-color: rgba(0, 0, 0, 1);
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 2px 5px rgba(171, 21, 205, 0.5); /* Cambiato il colore dell'ombra a viola */
         transition: top 0.3s ease;
         align-items: flex-end;
     }
