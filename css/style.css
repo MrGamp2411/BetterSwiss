@@ -1,3 +1,5 @@
+/* Aggiorna il tuo CSS in style.css */
+
 body {
     margin: 0;
     padding: 0;
@@ -16,24 +18,25 @@ header {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
     position: relative;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 
 .menu-icon {
     font-size: 24px;
     cursor: pointer;
-    order: 1; /* Cambiato l'ordine per spostare l'icona del menu a destra */
+    order: 2;
 }
 
 .logo-container {
-    text-align: center;
-    flex-grow: 1; /* Per far occupare tutto lo spazio disponibile */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 1;
 }
 
-.logo-container img {
-    display: block;
-    margin: 0 auto; /* Centra il logo */
+.logo-container h1 {
+    margin: 0;
 }
 
 nav {
@@ -45,8 +48,10 @@ nav {
     right: 0;
     background-color: rgba(0, 0, 0, 1);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-    transition: top 0.3s ease;
-    order: 0; /* Cambiato l'ordine per spostare la barra del menu a sinistra */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    order: 0;
 }
 
 nav a {
@@ -61,11 +66,15 @@ nav a:hover {
 }
 
 nav.open {
-    top: 60px;
+    max-height: 200px;
 }
 
 @media screen and (max-width: 600px) {
     .menu-icon {
+        display: block;
+    }
+
+    .logo-container h1 {
         display: block;
     }
 
@@ -75,5 +84,17 @@ nav.open {
 
     nav.open {
         display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(0, 0, 0, 1);
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        transition: top 0.3s ease;
+        align-items: flex-end;
+    }
+
+    nav a {
+        margin: 0;
     }
 }
